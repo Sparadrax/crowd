@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Selectable crowd simulation. Units use obstacle-aware routes, formation slots, and local separation to move around the scene. -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crowd — Three.js</title>
+    <link rel="stylesheet" href="/Lib/Bootstrap4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/NavBar.css">
+    <link rel="stylesheet" href="./crowd.css">
+    <link rel="stylesheet" href="/Theme.css?v=1">
+    <script type="importmap">
+        { "imports": { "three": "../../Lib/Three/Three.js" } }
+    </script>
+    <script src="/NavBar.js" defer></script>
+    <link rel="canonical" href="https://louisdubeux.com/Projects/crowd/crowd.html">
+    <meta name="description" content="A Three.js foundation for exploring crowd movement and collective behavior.">
+</head>
+<body>
+    <!-- Shared navigation is populated by /NavBar.js. -->
+    <div id="nav-placeholder"></div>
+    <main id="crowd-view" aria-label="Crowd development scene">
+        <section class="crowd-info">
+            <h1>Crowd</h1>
+            <p>Three.js development scene</p>
+            <small>Drag to orbit · Scroll to zoom · Right-drag to pan</small>
+        </section>
+        <p id="scene-error" role="alert" hidden></p>
+    </main>
+    <!-- Load the project entry module after its controls and view containers exist. -->
+    <script type="module" src="./crowd.js"></script>
+</body>
+</html>

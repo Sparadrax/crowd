@@ -1,0 +1,26 @@
+/* Selectable crowd simulation. Units use obstacle-aware routes, formation slots, and local separation to move around the scene.
+ * Page-specific layout and controls; shared theme colors are supplied by /Theme.css.
+ */
+html, body { height: 100%; margin: 0; }
+body { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+#nav-placeholder { flex: 0 0 auto; position: sticky; top: 0; z-index: 1030; background: var(--site-surface); }
+#crowd-view { position: relative; flex: 1 1 0; min-height: 0; overflow: hidden; }
+#crowd-view canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; touch-action: none; }
+.crowd-info { position: absolute; z-index: 1; top: 20px; left: 20px; right: 20px; max-width: 320px; padding: 20px; color: var(--site-text); background: var(--site-surface); border: 1px solid var(--site-border); border-radius: 10px; pointer-events: auto; }
+.crowd-info h1 { font-size: 1.5rem; margin: 0 0 8px; }
+.crowd-info p, .crowd-info small { color: var(--site-muted); }
+.crowd-info p { margin: 0 0 8px; }
+#scene-error { position: absolute; bottom: 20px; left: 20px; right: 20px; z-index: 2; padding: 16px; color: var(--site-text); background: var(--site-surface); border: 1px solid var(--site-accent); border-radius: 8px; }
+
+.crowd-info label { display: flex; justify-content: space-between; font-size: .8rem; margin: 12px 0 6px; }
+.crowd-info output { color: var(--site-accent); }
+.crowd-info input[type=range] { width: 100%; margin-bottom: 12px; }
+.crowd-row { display: flex; gap: 8px; }
+.crowd-row > * { flex: 1; min-width: 0; }
+#crowd-status { margin-top: 12px; color: var(--site-accent); font-size: .8rem; }
+.selection-box { position: absolute; z-index: 2; border: 1px solid var(--site-accent); background: color-mix(in srgb, var(--site-accent) 15%, transparent); pointer-events: none; }
+/* Stack or resize the project layout on narrower screens. */
+@media (max-width: 600px) {
+    .crowd-info { top: 10px; left: 10px; right: 10px; max-width: 250px; padding: 12px; }
+    .crowd-info small { font-size: .65rem; }
+}
